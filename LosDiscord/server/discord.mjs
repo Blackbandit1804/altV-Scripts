@@ -95,4 +95,4 @@ export function logDeath(victim, killer, weapon) {
 
 export default { playerJoin, playerLeft, stop, logCommand, logDeath };
 
-client.login('NzE4MTA1ODMxODQ1MTM0NDM3.XtkCMg.9cPGokrJk0iwYUF-9nOKzrC-5MA');
+client.login('');
