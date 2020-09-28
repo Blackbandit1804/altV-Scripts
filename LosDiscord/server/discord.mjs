@@ -11,7 +11,7 @@ client.on('message', message);
 
 function ready() {
     console.log(`Logged in as ${client.user.tag}!`);
-    client.channels.fetch('718106647897047130').then((channel) => {
+    client.channels.fetch('LOG-CHANNEL').then((channel) => {
         const embed = new Discord.MessageEmbed()
             .setTitle('LosSantos-Paradise.de')
             .setColor([204, 126, 0])
@@ -22,7 +22,7 @@ function ready() {
 }
 
 function message(msg) {
-    if (msg.channel.id === '718106647897047130') {
+    if (msg.channel.id === 'LOG-CHANNEL') {
         if (msg.content === '/status') {
             const embed = new Discord.MessageEmbed()
                 .setTitle('Aktueller Status')
@@ -54,19 +54,19 @@ function getTime(second) {
 }
 
 export function playerJoin(name) {
-    client.channels.fetch('718504709819858975').then((channel) => {
+    client.channels.fetch('LOG-CHANNEL').then((channel) => {
         channel.send('```' + name + ' ist dem Server beigetreten!```');
     });
 }
 
 export function playerLeft(name) {
-    client.channels.fetch('718504709819858975').then((channel) => {
+    client.channels.fetch('LOG-CHANNEL').then((channel) => {
         channel.send('```' + name + ' hat den Server verlassen!```');
     });
 }
 
 export function stop() {
-    client.channels.fetch('718106647897047130').then((channel) => {
+    client.channels.fetch('LOG-CHANNEL').then((channel) => {
         const embed = new Discord.MessageEmbed()
             .setTitle('LosSantos-Paradise.de')
             .setColor([255, 0, 0])
@@ -80,13 +80,13 @@ export function stop() {
 }
 
 export function logCommand(name, cmd) {
-    client.channels.fetch('718504709819858975').then((channel) => {
+    client.channels.fetch('LOG-CHANNEL').then((channel) => {
         channel.send('**[Command]** ' + name + ': ' + cmd);
     });
 }
 
 export function logDeath(victim, killer, weapon) {
-    client.channels.fetch('718545816570298440').then((channel) => {
+    client.channels.fetch('LOG-CHANNEL').then((channel) => {
         channel.send(
             '**[Kill]** Victim: ' + victim + ' | Killer: ' + killer + ' | Weapon: ' + weapon
         );
